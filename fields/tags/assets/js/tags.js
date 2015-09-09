@@ -300,7 +300,7 @@
 				data.sort(function(a,b){ return ((a.toLowerCase() < b.toLowerCase()) ? -1 : ((a.toLowerCase() > b.toLowerCase()) ? 1 : 0));	});
 				self.tags_list.data('initial_list', data);
 				$.each(data, function(){
-					if(self.get(this).length<1) self.tags_list.add(this);
+					if(self.element.find('.tag[data-tag="'+this+'"]').length < 1) self.tags_list.add(this);
 				});
 				self.element.parents('.field').append(self.tags_list);
 			});
