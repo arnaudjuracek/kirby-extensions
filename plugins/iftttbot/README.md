@@ -102,3 +102,6 @@ Louis Eveillard & Arnaud Juracek
 ## Changelog
 
 * **1.0.0** Initial release
+
+## License
+[MIT License](http://opensource.org/licenses/mit-license.php)
