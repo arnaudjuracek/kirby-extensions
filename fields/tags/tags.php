@@ -14,6 +14,7 @@ class TagsField extends TextField {
     $this->label     = l::get('fields.tags.label', 'Tags');
     $this->index     = 'siblings';
     $this->separator = ',';
+    $this->tags_list_visiblity	 = l::get('fields.tags.list', 'toggle');
     $this->lower     = false;
 
   }
@@ -26,6 +27,7 @@ class TagsField extends TextField {
       'field'     => 'tags',
       'lowercase' => $this->lower ? 'true' : false,
       'separator' => $this->separator,
+      'tags_list_visiblity' => $this->tags_list_visiblity,
     ));
 
     if(isset($this->data)) {

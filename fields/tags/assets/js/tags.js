@@ -257,6 +257,8 @@
 
 	// custom tags list
 	this.create_tags_list = function(){
+		var opt = this.source.data('tags_list_visiblity');
+		if(opt !== 'hide'){
 		// create all the markup
 			self.tags_list = $('<div class="tags-list"><div class="tags-list-container" style="display:none"></div></div>').css({
 				'font-size'   : self.input.css('font-size'),
@@ -278,6 +280,10 @@
 				self.tags_list.find('.tags-list-container').slideToggle('fast');
 			});
 
+			if(opt === 'show'){
+				self.tags_list.toggler.find('i').toggleClass('fa-chevron-circle-up fa-chevron-circle-down')
+				self.tags_list.find('.tags-list-container').show();
+			}
 
 		// custom add tag function (used in self.remove())
 			self.tags_list.add = function(tag){
@@ -304,6 +310,7 @@
 				});
 				self.element.parents('.field').append(self.tags_list);
 			});
+		}
 	};
 
 	// plugin setup
